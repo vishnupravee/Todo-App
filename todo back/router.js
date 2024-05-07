@@ -1,0 +1,13 @@
+const express=require("express")
+const login = require("./controler/controlerlog")
+const Schemafunction = require("./controler/controlersignup")
+const getfunction = require("./controler/gettask")
+const normalfunction = require("./controler/removetask")
+const posttaskfunction = require("./controler/addtask")
+const router=express.Router()
+router.route('/sin').post(login)
+router.route('/pull').post(Schemafunction)
+router.route('/view').get(getfunction)
+router.route('/dele/:id').delete(normalfunction)
+router.route('/addd').post(posttaskfunction)
+module.exports=router
